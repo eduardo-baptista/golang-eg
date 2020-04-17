@@ -9,3 +9,6 @@
 - go test -coverprofile=resultado.out - gera um relatório de testes
 - go tool cover -func=resultado.out - exibe o relatório gerado em go test
 - go tool cover -html=resultado.out - exibe o relatório gerado em go test
+- go mod init nome-do-projeto inicia um novo projeto
+- go mod tidy remove dependencias nao usadas
+- go mod vendor cria a pasta vendor para armezenar os modulos
