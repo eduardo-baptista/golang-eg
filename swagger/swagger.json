@@ -1,0 +1,105 @@
+{
+  "consumes": [
+    "text/plain"
+  ],
+  "produces": [
+    "text/plain"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "The purpose of this application is to test go-swagger in a simple GET request.",
+    "title": "Testing go-swagger generation",
+    "contact": {
+      "name": "Daniel",
+      "email": "danielfs.ti@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    "version": "0.0.1"
+  },
+  "host": "localhost:8080",
+  "paths": {
+    "/hello/{name}": {
+      "get": {
+        "description": "Returns a simple Hello message",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "tags": [
+          "hello"
+        ],
+        "operationId": "Hello",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Name to be returned.",
+            "name": "name",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The hello message"
+          }
+        }
+      }
+    },
+    "/message": {
+      "get": {
+        "description": "Returns a simple Message",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "message"
+        ],
+        "operationId": "Message",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ok"
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "ok": {
+      "description": "Success response",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "x-go-name": "Description"
+          }
+        }
+      }
+    },
+    "reposResp": {
+      "description": "HTTP status code 200 and an array of repository models in data",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "HTTP status code 200 - Status OK",
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "Code"
+          }
+        }
+      }
+    }
+  }
+}
